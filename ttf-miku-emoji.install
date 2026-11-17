@@ -1,0 +1,11 @@
+post_install() {
+  echo ":: Miku emoji enabled system-wide (prepended on every font lookup)."
+  echo ":: Disable with:  sudo rm /etc/fonts/conf.d/75-miku-emoji.conf && fc-cache -f"
+  echo ":: Restart browsers/apps so they reload their font tables."
+}
+
+post_upgrade() { post_install; }
+
+post_remove() {
+  echo ":: Miku emoji removed. Run: fc-cache -f"
+}
