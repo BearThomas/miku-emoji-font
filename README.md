@@ -13,7 +13,9 @@ hands   👍 🙏
 icons   💚 🎧 🎤 🎵 ✨
 ```
 
-## Install on Arch Linux
+## Install
+
+### Arch Linux (package)
 
 Download `ttf-miku-emoji-1.0.0-1-any.pkg.tar.zst` from the
 [releases page](../../releases) and install it:
@@ -23,26 +25,37 @@ sudo pacman -U ttf-miku-emoji-1.0.0-1-any.pkg.tar.zst
 fc-cache -f
 ```
 
-Then restart your browser / terminal so they reload their font tables.
+Uninstall: `sudo pacman -R ttf-miku-emoji && fc-cache -f`
 
-Uninstall:
+### Any other Linux (script)
+
+Works on Debian/Ubuntu, Fedora, openSUSE, Alpine … anything with fontconfig:
 
 ```bash
-sudo pacman -R ttf-miku-emoji && fc-cache -f
+git clone https://github.com/BearThomas/miku-emoji-font.git
+cd miku-emoji-font
+
+./install.sh          # system-wide (asks for sudo)
+# or
+./install.sh --user   # current user only, no root
 ```
 
-Temporarily disable while keeping the package:
+Remove with `./uninstall.sh` (add `--user` if you installed that way).
+
+Then restart your browser / terminal so they reload their font tables.
+
+Temporarily disable while keeping the files:
 
 ```bash
 sudo rm /etc/fonts/conf.d/75-miku-emoji.conf && fc-cache -f
 ```
 
-## Build from source
+### Build from source (Arch)
 
 ```bash
 git clone https://github.com/BearThomas/miku-emoji-font.git
 cd miku-emoji-font
-makepkg -si        # builds and installs ttf-miku-emoji
+makepkg -si
 ```
 
 ## How it works
