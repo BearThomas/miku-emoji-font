@@ -1,6 +1,6 @@
 # Miku Emoji Font
 
-Fan-made **Hatsune Miku** color emoji font: 56 emoji drawn as chibi Miku,
+Fan-made **Hatsune Miku** color emoji font: 62 emoji drawn as chibi Miku (59 codepoints + 3 ZWJ sequences),
 packaged as a `CBDT/CBLC` color bitmap font (the same format as Noto Color Emoji,
 so it works on Linux, Windows and Android, and in all Chromium/Firefox builds).
 
@@ -17,11 +17,11 @@ Anything not in the list below keeps using your normal emoji font.
 
 ### Arch Linux (package)
 
-Download `ttf-miku-emoji-1.1.0-1-any.pkg.tar.zst` from the
+Download `ttf-miku-emoji-1.2.0-1-any.pkg.tar.zst` from the
 [releases page](../../releases) and install it:
 
 ```bash
-sudo pacman -U ttf-miku-emoji-1.1.0-1-any.pkg.tar.zst
+sudo pacman -U ttf-miku-emoji-1.2.0-1-any.pkg.tar.zst
 fc-cache -f
 ```
 
@@ -59,6 +59,11 @@ makepkg -si
 ```
 
 ## How it works
+
+ZWJ sequences (😶‍🌫️ 😮‍💨 😵‍💫) are supported: the font carries the component
+glyphs plus a `rlig` ligature that maps the whole cluster to a dedicated
+glyph. This is why the container's CBLC index subtables are rebuilt as one
+dense table per strike.
 
 The font only contains 38 glyphs, but it is **prepended to every font lookup**
 (`75-miku-emoji.conf`), because Chromium/Skia resolves emoji through the generic
