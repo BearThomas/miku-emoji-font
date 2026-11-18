@@ -1,6 +1,6 @@
 # Maintainer: Thomas <thomas_xiong@outlook.com>
 pkgname=ttf-miku-emoji
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="Fan-made chibi Hatsune Miku color emoji font (38 emoji, CBDT/CBLC)"
 arch=('any')
@@ -10,7 +10,7 @@ install="$pkgname.install"
 provides=('miku-emoji-font')
 conflicts=('miku-emoji-font')
 source=("MikuEmoji.ttf" "75-miku-emoji.conf" "LICENSE" "README.md")
-sha256sums=('1b661b87393e78ebb0096b04e0dbecef886ce681a0c22dfafca01669c3a5f187'
+sha256sums=('373f7512553d94b602a21a72a3bc87d7aa0aeb1cd04de877f756b7cf5ecc5084'
             'SKIP' 'SKIP' 'SKIP')
 
 package() {
