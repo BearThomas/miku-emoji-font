@@ -1,6 +1,6 @@
 # Miku Emoji Font
 
-Fan-made **Hatsune Miku** color emoji font: 62 emoji drawn as chibi Miku (59 codepoints + 3 ZWJ sequences),
+Fan-made **Hatsune Miku** color emoji font: 72 emoji drawn as chibi Miku (59 codepoints + 3 ZWJ sequences),
 packaged as a `CBDT/CBLC` color bitmap font (the same format as Noto Color Emoji,
 so it works on Linux, Windows and Android, and in all Chromium/Firefox builds).
 
@@ -17,11 +17,11 @@ Anything not in the list below keeps using your normal emoji font.
 
 ### Arch Linux (package)
 
-Download `ttf-miku-emoji-1.2.0-1-any.pkg.tar.zst` from the
+Download `ttf-miku-emoji-1.3.0-1-any.pkg.tar.zst` from the
 [releases page](../../releases) and install it:
 
 ```bash
-sudo pacman -U ttf-miku-emoji-1.2.0-1-any.pkg.tar.zst
+sudo pacman -U ttf-miku-emoji-1.3.0-1-any.pkg.tar.zst
 fc-cache -f
 ```
 
