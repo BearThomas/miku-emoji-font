@@ -8,10 +8,8 @@
 
 ```
 miku-emoji-src-X.Y.Z/
-├── art/                    高辨识版 120 张 PNG + manifests
-├── art_hybrid/             官方还原版 81 张 PNG（人脸用）
+├── art/                    最终使用的 120 张 PNG + manifests（全尺寸还原画风）
 ├── scripts/
-│   ├── build_font_dual.py  双 strike 字体（小字高辨识 / 大字还原）
 │   ├── build_font_seq.py   单画风构建脚本
 │   ├── check_art.py        构建前校验（重复内容 / 重复码位 / 文件缺失）
 │   ├── install.sh          安装（默认不启用）
@@ -25,12 +23,11 @@ miku-emoji-src-X.Y.Z/
 从源码重建（Arch 示例）：
 
 ```bash
-tar xf miku-emoji-src-2.0.0.tar.gz
+tar xf miku-emoji-src-3.0.0.tar.gz
 cd miku-emoji-src-1.7.0
 python -m venv .venv && .venv/bin/pip install fonttools pillow
 .venv/bin/python scripts/check_art.py
-.venv/bin/python scripts/build_font_dual.py \
-  --art art --art-large art_hybrid \
+.venv/bin/python scripts/build_font_seq.py \
   --manifest art/manifest.json --sequences art/sequences.json \
   --subset <CBDT 容器> --family "Miku Emoji" --out MikuEmoji.ttf
 ```
