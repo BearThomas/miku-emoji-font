@@ -8,15 +8,27 @@ Chromium/Firefox builds.
 Anything not in the list below keeps using your normal emoji font.
 The full list with names and codepoints is in [`docs/emoji-list.md`](docs/emoji-list.md).
 
+
+## ⚠️ 双版本画风（v2.0 起）
+
+字体在**大字号（≥40px）使用贴近官方设定的还原版**（细线、冷白肤色、正常眼型），
+在**小字号（≤32px）使用高辨识版**（粗描边、大五官）。
+
+> **如果你在聊天窗口（16~24px）觉得某些表情「认不清」或「和预览图不一样」，这是刻意的。**
+> 还原版在 16~20px 下几乎不可读，所以小字号走的是高辨识版。
+> 想看还原效果，把 emoji 放到 48px 以上。
+
+详见 [`docs/dual-art.md`](docs/dual-art.md)。
+
 ## Install
 
 ### Arch Linux (package)
 
-Download `ttf-miku-emoji-1.7.0-1-any.pkg.tar.zst` from the
+Download `ttf-miku-emoji-2.0.0-1-any.pkg.tar.zst` from the
 [releases page](../../releases):
 
 ```bash
-sudo pacman -U ttf-miku-emoji-1.7.0-1-any.pkg.tar.zst
+sudo pacman -U ttf-miku-emoji-2.0.0-1-any.pkg.tar.zst
 fc-cache -f
 ```
 
@@ -58,7 +70,7 @@ To undo, delete that symlink/file and run `fc-cache -f`.
 ## Source files
 
 The 120 source PNGs (~158 MB) are **not** in git; they ship as a source
-tarball in [Releases](../../releases): `miku-emoji-src-1.7.0.tar.gz`.
+tarball in [Releases](../../releases): `miku-emoji-src-2.0.0.tar.gz`.
 
 It contains `art/` (PNGs + manifests), `scripts/` (builder + checker +
 install/uninstall), the built `MikuEmoji.ttf`, the Piapro license and the
