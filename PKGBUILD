@@ -1,6 +1,6 @@
 # Maintainer: Thomas <thomas_xiong@outlook.com>
 pkgname=ttf-miku-emoji
-pkgver=3.0.0
+pkgver=3.0.1
 pkgrel=1
 pkgdesc="Fan-made chibi Hatsune Miku color emoji font (38 emoji, CBDT/CBLC)"
 arch=('any')

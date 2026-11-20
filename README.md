@@ -23,11 +23,11 @@ v3.0 起**所有字号统一使用官方还原画风**（冷白肤色、正常�
 
 ### Arch Linux (package)
 
-Download `ttf-miku-emoji-3.0.0-1-any.pkg.tar.zst` from the
+Download `ttf-miku-emoji-3.0.1-1-any.pkg.tar.zst` from the
 [releases page](../../releases):
 
 ```bash
-sudo pacman -U ttf-miku-emoji-3.0.0-1-any.pkg.tar.zst
+sudo pacman -U ttf-miku-emoji-3.0.1-1-any.pkg.tar.zst
 fc-cache -f
 ```
 
@@ -69,7 +69,7 @@ To undo, delete that symlink/file and run `fc-cache -f`.
 ## Source files
 
 The 120 source PNGs (~158 MB) are **not** in git; they ship as a source
-tarball in [Releases](../../releases): `miku-emoji-src-3.0.0.tar.gz`.
+tarball in [Releases](../../releases): `miku-emoji-src-3.0.1.tar.gz`.
 
 It contains `art/` (PNGs + manifests), `scripts/` (builder + checker +
 install/uninstall), the built `MikuEmoji.ttf`, the Piapro license and the
@@ -101,3 +101,9 @@ This is a non-commercial fan work under the
 - Releases: https://github.com/BearThomas/miku-emoji-font/releases
 - Prompt template for making a different character: [`PROMPT_TEMPLATE.md`](PROMPT_TEMPLATE.md)
 - Full emoji list: [`docs/emoji-list.md`](docs/emoji-list.md)
+
+## v3.0.1 修复
+
+旧版 fontconfig 规则会劫持**所有**字体查询，导致网页（如洛谷）的代码字体切换失效。
+v3.0.1 起规则只对 Chromium emoji 回退使用的 `Arial` / `Liberation Sans` 生效，
+明确指定的代码字体（JetBrains Mono / Fira Code / Consolas …）不受影响。
