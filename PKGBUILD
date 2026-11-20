@@ -1,6 +1,6 @@
 # Maintainer: Thomas <thomas_xiong@outlook.com>
 pkgname=ttf-miku-emoji
-pkgver=1.6.0
+pkgver=1.7.0
 pkgrel=1
 pkgdesc="Fan-made chibi Hatsune Miku color emoji font (38 emoji, CBDT/CBLC)"
 arch=('any')
@@ -18,6 +18,5 @@ package() {
   install -Dm644 75-miku-emoji.conf "$pkgdir/usr/share/fontconfig/conf.avail/75-miku-emoji.conf"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
-  install -d "$pkgdir/etc/fonts/conf.d"
-  ln -s /usr/share/fontconfig/conf.avail/75-miku-emoji.conf "$pkgdir/etc/fonts/conf.d/75-miku-emoji.conf"
+  # conf is NOT enabled by default - see .install for opt-in instructions
 }
